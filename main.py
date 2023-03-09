@@ -1,5 +1,4 @@
 from aiogram import Bot, Dispatcher, executor, types
-from aiogram.types import ReplyKeyboardRemove, ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 from cryptocost import *
 
 token_api = '5150577399:AAFeaZI5iLT-hIAup8mcybkBiF4CkIw5mBs'
@@ -15,7 +14,6 @@ async def send_welcome(message: types.Message):
 async def echo(message: types.Message): 
    a = message.text.lower().split(' ')
    price_usd = all_cryptos_usd()
-   price_rub = all_cryptos_rub()
    for i in range(len(a)):
        print(a[i], a[i-1])
        if a[i] in price_usd and is_number(a[i-1]):
